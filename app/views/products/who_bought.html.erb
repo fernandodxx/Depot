@@ -1,0 +1,11 @@
+<li>
+  <h1 class="font-bold text-lg mb-3"><%= @product.title %></h1>
+  
+  <p class="mb-1">This product was purchased by</p>
+  <% @product.orders.each do |order| %>
+    <div>
+      <p>name: <%= order.name %></p>
+      <p class="mb-2">email: <%= order.email %> </p>
+    </div>
+  <% end %>
+</li>

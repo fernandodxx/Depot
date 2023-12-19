@@ -1,0 +1,7 @@
+<% if @line_item.destroyed? %>
+  <%= turbo_stream.replace 'cart', partial: 'layouts/cart', locals: {cart: @cart} %>
+  <%= turbo_stream.replace 'notice', partial: 'store/notice', locals: {notice: "The '#{@line_item.product.title}' was successfully destroyed." } %>
+<% else %>
+  <%= turbo_stream.update 'cart', partial: 'layouts/cart', locals: { cart: @cart } %>
+  <%= turbo_stream.replace 'notice', partial: 'store/notice', locals: {notice: "only one '#{@line_item.product.title}' was successfully destroyed." } %>
+<% end %>

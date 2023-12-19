@@ -1,0 +1,6 @@
+<%= turbo_stream.replace 'notice' do %>
+  <%= render partial: 'store/notice', locals: {notice: 'Your cart is currently empty' } %>
+<% end %>
+<%= turbo_stream.replace 'cart' do %>
+  <%= render partial: 'layouts/cart', locals: {cart: @cart} %>
+<% end %>
